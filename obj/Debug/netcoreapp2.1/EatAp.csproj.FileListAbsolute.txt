@@ -32,3 +32,7 @@ c:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\bin\Debug\netcoreapp2.1\EatAp.Views.
 c:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\EatAp.Views.pdb
 C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\EatAp.csproj.CopyComplete
 C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Account.g.cshtml.cs
+C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Details.g.cshtml.cs
+C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Info.g.cshtml.cs
+C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Admin\BRegLog.g.cshtml.cs

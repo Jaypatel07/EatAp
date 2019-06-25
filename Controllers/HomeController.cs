@@ -13,10 +13,20 @@ namespace EatAp.Controllers
 {
     public class HomeController : Controller
     {
+        private Context dbContext;
+        public HomeController (Context context) {
+            dbContext = context;
+        }
         public IActionResult Index()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32 ("UserId");
+            ViewBag.AdminId = HttpContext.Session.GetInt32 ("AdminId");
+            List<Admin> AllAdmins = dbContext.Admins.ToList();
+            ViewBag.AllAdmins = AllAdmins;
             return View();
+            
         }
+        
 
         public IActionResult About()
         {
