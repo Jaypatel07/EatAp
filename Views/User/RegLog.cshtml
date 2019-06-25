@@ -1,0 +1,100 @@
+@model EatAp.Models.User
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+    <div class="container">
+      <div class="page-header">
+        <h2>Welcome! Register or Login!</h2>
+      </div>
+      <div class = "col-sm-6">
+        <form class="form-horizontal" asp-action="register" asp-controller="User" method="Post">
+        <div class="form-group">
+          <span asp-validation-for="FirstName"></span>
+          <label class="control-label col-sm-2" asp-for="FirstName">First Name:</label>
+          <div class="col-sm-10">
+            <input asp-for="FirstName">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="LastName"></span>
+          <label class="control-label col-sm-2" asp-for="LastName">Last Name:</label>
+          <div class="col-sm-10">
+            <input asp-for="LastName">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="Email"></span>
+          <label class="control-label col-sm-2" asp-for="Email">Email:</label>
+          <div class="col-sm-10">
+            <input asp-for="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="Password"></span>
+          <label class="control-label col-sm-2" asp-for="Password">Password:</label>
+          <div class="col-sm-10">
+            <input asp-for="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="ConfirmPW"></span>
+          <label class="control-label col-sm-2" asp-for="ConfirmPW">Confirm Password:</label>
+          <div class="col-sm-10">
+            <input asp-for="ConfirmPW">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+        </div>
+      </form>
+      </div>
+      <div class = "col-sm-6">
+      <form class="form-horizontal" asp-action="login" asp-controller="User" method="Post">
+        <div class="form-group">
+          <span asp-validation-for="Email"></span>
+          <label class="control-label col-sm-2" asp-for="Email">Email:</label>
+          <div class="col-sm-10">
+            <input asp-for="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <span asp-validation-for="Password"></span>
+          <label class="control-label col-sm-2" asp-for="Password">Password:</label>
+          <div class="col-sm-10">
+            <input asp-for="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Login</button>
+        </div>
+        </div>
+      </form>
+      <script> window.fbAsyncInit = function() {
+      FB.init({
+      appId            : '1270636519769204',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.3',
+      })
+      
+      };
+      </script>
+      
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+      <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+        
+      </div>
+    </div>
+  </body>
+</html>
