@@ -11575,23 +11575,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaypa\\.nuget\\packages\\": {},
+    "C:\\Users\\bijal\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
+      "projectUniqueName": "c:\\Users\\bijal\\OneDrive\\Desktop\\CodingDojo\\CSharp\\EatAp\\EatAp.csproj",
       "projectName": "EatAp",
-      "projectPath": "C:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
-      "packagesPath": "C:\\Users\\jaypa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\obj\\",
+      "projectPath": "c:\\Users\\bijal\\OneDrive\\Desktop\\CodingDojo\\CSharp\\EatAp\\EatAp.csproj",
+      "packagesPath": "C:\\Users\\bijal\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\bijal\\OneDrive\\Desktop\\CodingDojo\\CSharp\\EatAp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jaypa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bijal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
