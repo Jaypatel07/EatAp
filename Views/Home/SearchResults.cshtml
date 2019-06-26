@@ -27,7 +27,9 @@
                 <input class="form-control" id="myInput" type="text" placeholder="Search...">
             </div>
             <div class="col-sm-12">
-                <!-- for loop of the restaurant list-->
+                     @{
+                        foreach(var i in @ViewBag.AllAdmins){
+                            <li class="list-group-item"><a href="/details/@i.RestaurantId">@i.RestaurantName</a></li>
             </div>
         </div>
     </body>
