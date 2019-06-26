@@ -1,4 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
@@ -34,4 +34,24 @@ body {
     .carousel-caption {
         display: none;
     }
+}
+.logo{
+    width: 75px;
+    height: 75px;   
+}
+.navbar {
+    background-color: #262626;
+    border: none;
+    height: 100px;
+}
+.navbar-inverse .navbar-nav > li > a{
+    line-height: 75px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.page-header{
+    margin-top: 75px;
+}
+.toplinks {
+    margin-left: 800px;
 }

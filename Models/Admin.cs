@@ -49,7 +49,7 @@ namespace EatAp.Models {
         public int? UserId {get;set;}
         public List<Review> RestaurantReviews {get;set;}
         public List<Menu> MenuItems {get;set;}
-
+        
          public Admin() {
             RestaurantReviews = new List<Review>();
             MenuItems = new List<Menu>();

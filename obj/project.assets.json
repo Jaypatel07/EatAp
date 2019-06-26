@@ -11581,11 +11581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
+      "projectUniqueName": "c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
       "projectName": "EatAp",
-      "projectPath": "C:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
+      "projectPath": "c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
       "packagesPath": "C:\\Users\\jaypa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\obj\\",
+      "outputPath": "c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
