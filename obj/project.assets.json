@@ -11575,23 +11575,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jaypa\\.nuget\\packages\\": {},
+    "C:\\Users\\bijal\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
+      "projectUniqueName": "c:\\Users\\bijal\\OneDrive\\Desktop\\CodingDojo\\EatAp\\EatAp.csproj",
       "projectName": "EatAp",
-      "projectPath": "c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\EatAp.csproj",
-      "packagesPath": "C:\\Users\\jaypa\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\obj\\",
+      "projectPath": "c:\\Users\\bijal\\OneDrive\\Desktop\\CodingDojo\\EatAp\\EatAp.csproj",
+      "packagesPath": "C:\\Users\\bijal\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\bijal\\OneDrive\\Desktop\\CodingDojo\\EatAp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jaypa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bijal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11641,13 +11641,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file c:\\Users\\jaypa\\OneDrive\\CodingDojo\\C#\\EatAp\\obj\\EatAp.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
