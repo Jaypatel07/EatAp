@@ -15,19 +15,17 @@ namespace EatAp.Models {
         [MaxLength(255)]
         public string ReviewDesc {get; set;}
         [Required]
+        public int RestaurantId {get;set;}
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
-        public int? UserId {get;set;}
-        public List<User> UserReview {get;set;}
 
-        [ForeignKey("Admin")]
-        public int? AdminId {get;set;}
-        public List<Admin> AdminReviews {get;set;}
+        public int UserId {get;set;}
+        public User User {get;set;}
+        
+        public List<RestaurantNReview> RestaurantNReview {get;set;}
 
         public Review() {
-            AdminReviews = new List<Admin>();
-            UserReview = new List<User>();
+            RestaurantNReview = new List<RestaurantNReview>();
         }
-
     }
 }

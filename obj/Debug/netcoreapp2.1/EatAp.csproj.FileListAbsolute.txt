@@ -35,7 +35,6 @@ C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\UserSecretsA
 <<<<<<< HEAD
 C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Account.g.cshtml.cs
 C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Details.g.cshtml.cs
-C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Info.g.cshtml.cs
 C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Admin\BRegLog.g.cshtml.cs
 =======
 C:\Users\bijal\OneDrive\Desktop\CodingDojo\CSharp\EatAp\bin\Debug\netcoreapp2.1\EatAp.deps.json
@@ -77,3 +76,4 @@ C:\Users\bijal\OneDrive\Desktop\CodingDojo\CSharp\EatAp\obj\Debug\netcoreapp2.1\
 C:\Users\bijal\OneDrive\Desktop\CodingDojo\CSharp\EatAp\obj\Debug\netcoreapp2.1\EatAp.csproj.CopyComplete
 C:\Users\bijal\OneDrive\Desktop\CodingDojo\CSharp\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\SearchResults.g.cshtml.cs
 >>>>>>> d37556561567c2beb7b3a450cd44fdc03c4a3759
+C:\Users\jaypa\OneDrive\CodingDojo\C#\EatAp\obj\Debug\netcoreapp2.1\Razor\Views\Home\newreview.g.cshtml.cs

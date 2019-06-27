@@ -1,43 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    </head>
+
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Details</h1>
-            </div>
-            <div class="col-sm-8">
-            
-            </div>
-            <div class="col-sm-8">
-                <!-- Menu items -->
-            </div>
-            <div class="col-sm-8">
+                 @{
+                    if(@ViewBag.UserId != null || @ViewBag.AdminId != null ){
+                        <a href="/logout">Logout</a>
+                    }
+                    else {
+                        <a href="/signin">Login |</a>
+                        
+                        <a href="/business">Business</a>
+                    }
+                
+               
+                  
+                  }
+                    @if(@ViewBag.AdminId != null){
+                        <a href="/addmenu">Add Menu</a>
+                    }
                 
             </div>
-            <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-secondary text-white" style="max-width: 400px; max-height: 300px;">
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
-                    <p>Hello world hello world hello world hello world hello world hello world hello world</p>
+            <div class="row">
+                <div class="col-xs-9 col-md-7">
+                        <input
+                            type="hidden"
+                            role="uploadcare-uploader"
+                            data-multiple="true"
+                            data-multiple-min="1"
+                            data-multiple-max="10" />
+                </div>
             </div>
+           
+            <div class="row">
+            <div class="col-xs-9 col-md-7">
+              
+            </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-xs-9 col-md-7">
+                  
+                        @if(@ViewBag.UserId != null){
+                            <a href="/newreview/@ViewBag.CurrentAdmin.AdminId">Leave a Review</a>
+                        }
+                    
+                    <div class="pre-scrollable" style="max-width: 100%; max-height: 300px;">
+                        @foreach(var i in @ViewBag.AllReviews){
+                            <h4>@i.Name</h4>
+                            <p>@i.ReviewDesc</p>
+                            @if(i.UserId == @ViewBag.UserId){
+                                <a href="/editreview/">Edit Review</a>
+                                <a href="/delete/@i.ReviewId">Delete Review</a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+           
+        
         </div>
     </body>
 </html>

@@ -36,5 +36,13 @@ namespace EatAp.Models {
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
+        public List<RestaurantNReview> Reviews {get;set;}
+
+        public User() {
+            Reviews = new List<RestaurantNReview>();
+        }
+
+
+
     }
 }

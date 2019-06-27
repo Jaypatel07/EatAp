@@ -55,3 +55,37 @@ body {
 .toplinks {
     margin-left: 800px;
 }
+.container .body-content {
+    min-height: 800px;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+
+  .left {
+    left: 0;
+    background-image: url("../images/Canva1.jpg");
+    background-size: cover;
+  }
+  
+
+  .right {
+    right: 0;
+    background-color: white;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+

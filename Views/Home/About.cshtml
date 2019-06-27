@@ -1,7 +1,41 @@
 ﻿@{
-    ViewData["Title"] = "About";
+ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="container">
+    <div class="page-header">
+        <h1>Info Page</h1>
+    </div>
+    <div class="col-sm-7">
+        <iframe width="650" height="620" frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/view?zoom=17&center=47.5957%2C-122.1929&key=AIzaSyBv8mKpwI2wVM-KMybuGc6kL-tt1f_RA0U"
+            allowfullscreen></iframe>
+    </div>
+    <div class="col-sm-5">
+        @{
+        if(@ViewBag.UserId != null || @ViewBag.AdminId != null
+        ){
+        <a href="/logout">Logout</a>
+        }
+        else {
+        <a href="/signin">Login |</a>
+
+        <a href="/business">Business</a>
+        }
+        }
+        <h1 class="text-center">Info</h1>
+        <h3>Thank you so much for vising our website. </h3>
+        <br>
+
+        <h4>With EatAp you can:</h4>
+        <ul>
+            <li><h4>Search for different restauruants</h4></li>
+            <br>
+            <li><h4>Share Pictures</h4></li>
+            <br>
+            <li><h4>Leave your experience with other users</h4></li>
+            <br>
+            <li><h4>Register your business as a restaurant owner </h4></li>
+        </ul>
+    </div>
+</div>

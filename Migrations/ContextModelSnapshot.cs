@@ -19,9 +19,8 @@ namespace EatAp.Migrations
 
             modelBuilder.Entity("EatAp.Models.Admin", b =>
                 {
-                    b.Property<int>("AdminId");
-
-                    b.Property<int>("RestaurantId");
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -37,16 +36,61 @@ namespace EatAp.Migrations
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<int>("RestaurantId");
+
                     b.Property<string>("RestaurantName")
                         .IsRequired();
 
                     b.Property<DateTime>("UpdatedAt");
 
-                    b.Property<int?>("UserId");
-
-                    b.HasKey("AdminId", "RestaurantId");
+                    b.HasKey("AdminId");
 
                     b.ToTable("Admins");
+                });
+
+            modelBuilder.Entity("EatAp.Models.RestaurantNReview", b =>
+                {
+                    b.Property<int>("RestaurantNReviewId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ReviewId");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("RestaurantNReviewId");
+
+                    b.HasIndex("ReviewId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RestaurantNReviews");
+                });
+
+            modelBuilder.Entity("EatAp.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("RestaurantId");
+
+                    b.Property<string>("ReviewDesc")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime>("UpdatedAt");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("ReviewId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("EatAp.Models.User", b =>
@@ -73,6 +117,27 @@ namespace EatAp.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("EatAp.Models.RestaurantNReview", b =>
+                {
+                    b.HasOne("EatAp.Models.Review", "Review")
+                        .WithMany("RestaurantNReview")
+                        .HasForeignKey("ReviewId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("EatAp.Models.User", "User")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("EatAp.Models.Review", b =>
+                {
+                    b.HasOne("EatAp.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

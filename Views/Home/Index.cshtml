@@ -1,49 +1,60 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+ViewData["Title"] = "Home | ";
 }
-<!DOCTYPE html>
+@using EatAp.Models
+@model List<EatAp.Models.Admin>
 
-<html lang="en">
-    <body>
-        <!-- jQuery for search box -->
-        <script>
-            $(document).ready(function(){
-                $("#myInput").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#myList li").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-                });
-            });
-        </script>
-        <div class="container">
-            <div class="page-header">
-                @{
-                    if(@ViewBag.UserId != null || @ViewBag.AdminId != null ){
-                        <a href="/logout">Logout</a>
-                    }
-                    else {
-                        <a href="/signin">Login |</a>
+    <html lang="en">
+        <div class="split left">
+            <div class="centered">
+             
+                <body>                    
+                    <script>
+                        $(document).ready(function(){
+                            $("#myInput").on("keyup", function() {
+                                var value = $(this).val().toLowerCase();
+                                $("#myList li").filter(function() {
+                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
+                            });
+                        });
+                    </script>
+                    <div class="container">
                         
-                        <a href="/business">Business</a>
-                    }
-                }
-            </div>
-           
-            
-            <div class="col-sm-12">
-                <h1>Search</h1>
-                <input class="form-control" id="myInput" type="text" placeholder="Search...">
-                <ul id="myList" class="list-group">
-                    @{
-                        foreach(var i in @ViewBag.AllAdmins){
-                             <li class="list-group-item"><a href="/details/@i.RestaurantId">@i.RestaurantName</a></li>
+        </div>
+    </div>
+    </div>
+    <div class="split right">
+        <div class="centered">
+                @{
+                    if(@ViewBag.UserId != null || @ViewBag.AdminId != null
+                    ){
+        <a href="/logout">Logout</a>
+    }
+    else {
+        <a href="/signin">Login |</a>
+
+        <a href="/business">Business</a>
+    }
+}
+            <h3>Search</h3>
+            <input class="form-control" id="myInput" type="text"
+            placeholder="Search...">
+            <ul id="myList" class="list-group">
+                @{
+                    foreach(var i in @ViewBag.AllAdmins){
+                        <li class="list-group-item"><a
+                            href="/details/@i.AdminId">@i.RestaurantName</a></li>
                         }
                     }
-       
-                  </ul>
-             
+                    
+                </ul>
+                
+                
             </div>
-        </div>
-    </body>
+        </body>
+    </div>
+</div>
+</div>
+
 </html>
