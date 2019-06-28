@@ -20,7 +20,9 @@ namespace EatAp.Controllers {
         [HttpGet]
         [Route ("signin")]
         public ActionResult SignIn () {
-
+            if (HttpContext.Session.GetInt32 ("UserId") != null) {
+                return RedirectToAction("");
+            }
             return View ("RegLog");
         }
 
@@ -38,7 +40,6 @@ namespace EatAp.Controllers {
                 user.Password = Hasher.HashPassword (user, user.Password);
                 user.CreatedAt = DateTime.Now;
                 user.UpdatedAt = DateTime.Now;
-
                 dbContext.Users.Add (user);
                 dbContext.SaveChanges ();
                 HttpContext.Session.SetInt32 ("UserId", user.UserId);
@@ -52,29 +53,18 @@ namespace EatAp.Controllers {
         [Route ("login")]
         public IActionResult login (LoginUser userSubmission) {
             if (ModelState.IsValid) {
-                // If inital ModelState is valid, query for a user with provided email
                 var userInDb = dbContext.Users.FirstOrDefault (u => u.Email == userSubmission.Email);
-                // If no user exists with provided email
                 if (userInDb == null) {
-                    // Add an error to ModelState and return to View!
                     ModelState.AddModelError ("Email", "Invalid Email/Password");
                     return View ("RegLog");
                 }
-
-                // Initialize hasher object
                 var hasher = new PasswordHasher<LoginUser> ();
-
-                // varify provided password against hash stored in db
                 var result = hasher.VerifyHashedPassword (userSubmission, userInDb.Password, userSubmission.Password);
-
-                // result can be compared to 0 for failure
                 if (result == 0) {
                     ModelState.AddModelError ("Password", "Invalid Email/Password");
                     return View ("RegLog");
                 }
-
                 HttpContext.Session.SetInt32 ("UserId", userInDb.UserId);
-                
                 return RedirectToAction ("", "Home");
 
             }

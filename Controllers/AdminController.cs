@@ -18,7 +18,9 @@ namespace EatAp.Controllers {
         [HttpGet]
         [Route ("business")]
         public ActionResult business () {
-
+            if (HttpContext.Session.GetInt32 ("AdminId") != null) {
+                return RedirectToAction("");
+            }
             return View ("BRegLog");
         }
 
@@ -49,43 +51,29 @@ namespace EatAp.Controllers {
         [Route ("blogin")]
         public IActionResult login (LoginAdmin AdminSubmission) {
             if (ModelState.IsValid) {
-                // If inital ModelState is valid, query for a Admin with provided email
                 var AdminInDb = dbContext.Admins.FirstOrDefault (u => u.Email == AdminSubmission.Email);
-                // If no Admin exists with provided email
                 if (AdminInDb == null) {
-                    // Add an error to ModelState and return to View!
                     ModelState.AddModelError ("Email", "Invalid Email/Password");
                     return View ("BRegLog");
-                }
-
-                // Initialize hasher object
+                }   
                 var hasher = new PasswordHasher<LoginAdmin> ();
-
-                // varify provided password against hash stored in db
                 var result = hasher.VerifyHashedPassword (AdminSubmission, AdminInDb.Password, AdminSubmission.Password);
-
-                // result can be compared to 0 for failure
                 if (result == 0) {
                     ModelState.AddModelError ("Password", "Invalid Email/Password");
                     return View ("BRegLog");
                 }
-
                 HttpContext.Session.SetInt32 ("AdminId", AdminInDb.AdminId);
                 ViewBag.AdminId = HttpContext.Session.GetInt32 ("AdminId");
                 return RedirectToAction ("", "Home");
-
             }
-
             return View ("BRegLog");
         }
-        
-
         [HttpGet]
         [Route ("/logout")]
 
         public IActionResult Logout () {
             HttpContext.Session.Clear ();
-            return RedirectToAction ("business", "Admin");
+            return RedirectToAction ("", "Home");
 
         }
     }

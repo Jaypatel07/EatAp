@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 namespace EatAp.Models {
     public class Admin {
+      
         [Key]
         public int AdminId { get; set; }
-
 
         [Required]
         [Display(Name = "First Name:")]
@@ -38,22 +38,13 @@ namespace EatAp.Models {
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-        [Key]
-        public int RestaurantId {get;set;}
         [Required]
         [MinLength(2)]
         public string RestaurantName {get;set;}
 
 
-        [ForeignKey("User")]
-        public int? UserId {get;set;}
-        public List<Review> RestaurantReviews {get;set;}
-        public List<Menu> MenuItems {get;set;}
-        
-         public Admin() {
-            RestaurantReviews = new List<Review>();
-            MenuItems = new List<Menu>();
-        }
+        [Required]
+        public int RestaurantId {get;set;}
 
 
     }
