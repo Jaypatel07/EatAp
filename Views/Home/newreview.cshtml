@@ -6,7 +6,7 @@
         <h4>Add a Review</h4>
       </div>
       <div class = "col-sm-6">
-        <form class="form-horizontal" asp-action="addreview" asp-controller="Home" method="Post">
+        <form class="form-horizontal" asp-action="addreview"  asp-route-id="@ViewBag.CurrentAdmin.AdminId" asp-controller="Home" method="Post">
             <input type="hidden" asp-for="User" value="@ViewBag.CurrentUser">
             <input type="hidden" asp-for="UserId" value="@ViewBag.CurrentUser.UserId">
             <input type="hidden" asp-for="RestaurantId" value="@ViewBag.CurrentAdmin.AdminId">

@@ -1,60 +1,79 @@
-﻿@{
+@{
 ViewData["Title"] = "Home | ";
 }
 @using EatAp.Models
 @model List<EatAp.Models.Admin>
-
     <html lang="en">
         <div class="split left">
             <div class="centered">
-             
-                <body>                    
+                <body>               
                     <script>
                         $(document).ready(function(){
-                            $("#myInput").on("keyup", function() {
+                            $(".myInput").on("keypress", function() { 
                                 var value = $(this).val().toLowerCase();
-                                $("#myList li").filter(function() {
+                                $(".myList li").filter(function() {
                                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                                 });
-                            });
+                            });           
                         });
-                    </script>
-                    <div class="container">
-                        
-        </div>
-    </div>
-    </div>
-    <div class="split right">
-        <div class="centered">
-                @{
-                    if(@ViewBag.UserId != null || @ViewBag.AdminId != null
-                    ){
-        <a href="/logout">Logout</a>
-    }
-    else {
-        <a href="/signin">Login |</a>
-
-        <a href="/business">Business</a>
-    }
-}
-            <h3>Search</h3>
-            <input class="form-control" id="myInput" type="text"
-            placeholder="Search...">
-            <ul id="myList" class="list-group">
-                @{
-                    foreach(var i in @ViewBag.AllAdmins){
-                        <li class="list-group-item"><a
-                            href="/details/@i.AdminId">@i.RestaurantName</a></li>
-                        }
-                    }
-                    
-                </ul>
-                
-                
+                        </script>
+                        <div class="container">
             </div>
-        </body>
-    </div>
-</div>
-</div>
+        </div>
+        <div class="split right">
+            <div class="centered">
+                @{
+                    if(@ViewBag.UserId != null || @ViewBag.AdminId != null){
+                        <a href="/logout">Logout</a>
+                    }
+                    else {
+                        <a href="/signin">Login |</a>
 
+                        <a href="/business">Business</a>
+                    }
+                }
+
+                <h3>Search</h3>
+                <form class="labnol" method="get">
+                
+                    <input class="form-control myInput" id="transcript" type="text" placeholder="Search...">
+                    <img onclick="startDictation()" on src="//i.imgur.com/cHidSVu.gif" class="micImg"/>
+                </form>
+                <ul class="myList" class="list-group"> 
+                    @foreach(var i in @ViewBag.AllAdmins){
+                        <li class="list-group-item"><a href="/details/@i.AdminId">@i.RestaurantName</a></li> 
+                    }   
+                </ul> 
+            </div>
+        </div>
+            <script>
+                function startDictation() {
+                if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+                var recognition = new webkitSpeechRecognition();
+
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.lang = "en-US";
+                recognition.start();
+
+                recognition.onresult = function(e) {
+                    document.getElementById('transcript').value= e.results[0][0].transcript;
+                    recognition.stop();
+                    document.getElementsByClassName('labnol')
+          
+                    
+                };
+
+                recognition.onerror = function(e) {
+                    recognition.stop();
+                }
+
+                }
+                }
+            </script>
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
+        </div>
+        </body>
 </html>

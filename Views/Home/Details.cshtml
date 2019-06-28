@@ -12,52 +12,81 @@
                         <a href="/business">Business</a>
                     }
                 
-               
-                  
                   }
-                    @if(@ViewBag.AdminId != null){
-                        <a href="/addmenu">Add Menu</a>
-                    }
                 
             </div>
-            <div class="row">
-                <div class="col-xs-9 col-md-7">
-                        <input
-                            type="hidden"
-                            role="uploadcare-uploader"
-                            data-multiple="true"
-                            data-multiple-min="1"
-                            data-multiple-max="10" />
-                </div>
-            </div>
-           
-            <div class="row">
-            <div class="col-xs-9 col-md-7">
-              
-            </div>
-            </div>
-           
-            <div class="row">
-                <div class="col-xs-9 col-md-7">
-                  
-                        @if(@ViewBag.UserId != null){
-                            <a href="/newreview/@ViewBag.CurrentAdmin.AdminId">Leave a Review</a>
-                        }
-                    
-                    <div class="pre-scrollable" style="max-width: 100%; max-height: 300px;">
-                        @foreach(var i in @ViewBag.AllReviews){
-                            <h4>@i.Name</h4>
-                            <p>@i.ReviewDesc</p>
-                            @if(i.UserId == @ViewBag.UserId){
-                                <a href="/editreview/">Edit Review</a>
-                                <a href="/delete/@i.ReviewId">Delete Review</a>
-                            }
-                        }
-                    </div>
-                </div>
-            </div>
-           
-        
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+      <input type="hidden" role="uploadcare-uploader" data-multiple="true" data-multiple-min="1" data-multiple-max="10" />
+        <br>
+        <br>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+<div class="container">
+
+    <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+      <img src="~/images/sushi1.jpg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 3</div>
+      <img src="~/images/sushi2.jpg" style="width:50%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+      <img src="~/images/sushi3.jpg" style="width:50%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="~/images/sushi1.jpg" style="width:50%" onclick="currentSlide(1)" alt="Sushi">
+    </div>
+    <div class="column"> 
+      <img class="demo cursor" src="~/images/sushi2.jpg" style="width:40%" onclick="currentSlide(2)" alt="Sushi">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="~/images/sushi3.jpg" style="width:50%" onclick="currentSlide(3)" alt="Sushi">
+    </div>
+  </div>
+</div>  
+    </div>
+<div class="col-xs-6 col-md-4">
+    <h4 class="reviewtitle">Reviews</h4>
+  <div class="pre-scrollable" style="max-width: 100%; max-height: 200px;">
+        @foreach(var i in @ViewBag.AllReviews){
+            <h4>@i.Name</h4>
+            <p>@i.ReviewDesc</p>
+            @if(i.UserId == @ViewBag.UserId){
+                <a href="/delete/@i.ReviewId">Delete</a>
+            }
+        }
         </div>
+</div>  
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        @if(@ViewBag.UserId == null || @ViewBag.AdminId == null ){
+            <br>
+            <h6>Must be logged in to leave a review</h6>
+            
+        }
+        @if (@ViewBag.UserId != null || @ViewBag.AdminId != null ){
+            <a href="/newreview/@ViewBag.CurrentAdmin.AdminId">Leave a Review</a>
+        }
+    </div>
+</div>
     </body>
 </html>

@@ -54,7 +54,7 @@ using EatAp.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(35, 284, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c06d31449dc94862afbcea864c78c28c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd1e8e324bc74ae7a13f4545861de8de", async() => {
                 BeginContext(41, 271, true);
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
@@ -79,7 +79,7 @@ using EatAp.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(321, 220, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6a4d8478ade4f18859326f7348d1042", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c77624ad144bfe9c2a757d29290824", async() => {
                 BeginContext(327, 207, true);
                 WriteLiteral("\r\n    <div class=\"container\">\r\n        <div class=\"page-header\">\r\n            <h1>Account</h1>\r\n        </div>\r\n        <div class=\"col-sm-12\">\r\n            <h2>Hello World</h2>\r\n        </div>\r\n    </div>\r\n");
                 EndContext();

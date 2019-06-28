@@ -17,7 +17,7 @@ namespace EatAp.Controllers {
 
         }
 
-        [HttpGet]
+        [HttpGet, HttpPost]
         [Route ("")]
         public IActionResult Index () {
             ViewBag.UserId = HttpContext.Session.GetInt32 ("UserId");
@@ -27,6 +27,7 @@ namespace EatAp.Controllers {
             return View ();
 
         }
+        
 
         [HttpGet]
         [Route ("details/{AdminId}")]
@@ -39,6 +40,7 @@ namespace EatAp.Controllers {
                 .ToList ();
             ViewBag.AllReviews = AllReviews;
             ViewBag.UserId = HttpContext.Session.GetInt32 ("UserId");
+
             ViewBag.AdminId = HttpContext.Session.GetInt32 ("AdminId");
             ViewBag.CurrentUser = CurrentUser;
             ViewBag.CurrentAdmin = CurrentAdmin;
@@ -55,6 +57,7 @@ namespace EatAp.Controllers {
             User CurrentUser = dbContext.Users.SingleOrDefault (user => user.UserId == HttpContext.Session.GetInt32 ("UserId"));
             ViewBag.CurrentAdmin = CurrentAdmin;
             ViewBag.CurrentUser = CurrentUser;
+            ViewBag.UserId = HttpContext.Session.GetInt32 ("UserId");
             return View ("newreview");
         }
 
@@ -67,7 +70,7 @@ namespace EatAp.Controllers {
             ViewBag.CurrentAdmin = CurrentAdmin;
             ViewBag.CurrentUser = CurrentUser;
             if (HttpContext.Session.GetInt32 ("UserId") == null) {
-                return RedirectToAction ("Index", "User");
+                return RedirectToAction ("Index", "Home");
             }
             if (ModelState.IsValid) {
                 dbContext.Add (review);
@@ -82,7 +85,7 @@ namespace EatAp.Controllers {
                 };
                 CurrentReview.RestaurantNReview.Add (n);
                 dbContext.SaveChanges ();
-                return RedirectToAction("/");
+                return RedirectToAction("");
             } else {
                 ViewBag.errors = ModelState.Values;
 
@@ -99,7 +102,7 @@ namespace EatAp.Controllers {
             Review CurrentReview = dbContext.Reviews.SingleOrDefault(Activity => Activity.ReviewId == ReviewId);
             dbContext.Reviews.Remove(CurrentReview);
             dbContext.SaveChanges();
-            return RedirectToAction("/");
+            return RedirectToAction("");
         }
 
         [HttpGet]
